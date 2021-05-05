@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  color: #ffffff;
+  background-color: hsl(235, 16%, 14%);
+  background-image: url(./images/bg-stars.svg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  overflow-x: hidden;
+}
+
+.countdown-main {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(70px, 150px));
+  place-items: center;
+  margin: auto;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container p {
+  margin-top: 1.75rem;
+  color: hsl(237, 18%, 59%);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  margin: 5em auto 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 10px 0px 0 hsl(234, 17%, 12%);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-upper,
+.card-lower {
+  width: 150px;
+  height: 75px;
+  position: absolute;
+}
+
+.card-upper {
+  background-color: hsl(236, 21%, 22%);
+  top: 0;
+}
+
+.card-lower {
+  background-color: hsl(236, 21%, 26%);
+  bottom: 0;
+}
+
+.card-upper::before,
+.card-upper::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: hsl(234, 17%, 12%);
+  position: absolute;
+}
+.card-upper::before {
+  top: 90%;
+  left: -5%;
+}
+.card-upper::after {
+  top: 90%;
+  right: -5%;
+}
+
+.countdown-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+}
+
+.countdown-time {
+  font-size: 4.5rem;
+  color: hsl(345, 95%, 68%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 720px) {
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-upper,
+  .card-lower {
+    width: 120px;
+    height: 60px;
+  }
+
+  .countdown-main {
+    margin: auto 0;
+  }
+  .card span {
+    font-size: 1rem;
+  }
+
+  .countdown-time {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 500px) {
+  .card {
+    width: 70px;
+    height: 70px;
+    margin: 5em 0 0 0;
+  }
+  .card-upper,
+  .card-lower {
+    width: 70px;
+    height: 35px;
+  }
+  .card-upper::before,
+  .card-upper::after {
+    width: 10px;
+    height: 10px;
+    top: 85%;
+  }
+  .card-upper::before {
+    left: -7%;
+  }
+  .card-upper::after {
+    right: calc(-7% - 1px);
+  }
+
+  .card-container p {
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .countdown {
+    grid-gap: 0.25em;
+    width: 100%;
+  }
+  .countdown-title {
+    font-size: 1.125rem;
+    padding: 0 0.25rem;
+  }
+  .card span {
+    font-size: 0.75rem;
+  }
+  .countdown-time {
+    font-size: 2.25rem;
+  }
+}
+
+.footer {
+  position: relative;
+  background-image: url(./images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.social-icons {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons i {
+  font-size: 1.75rem;
+  color: hsl(271, 18%, 59%);
+  cursor: pointer;
+  margin: 0 1.5rem;
+  transition: all 0.2s ease;
+}
+.social-icons i:hover {
+  color: hsl(345, 95%, 68%);
+}
